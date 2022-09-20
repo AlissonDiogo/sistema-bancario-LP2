@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class CartaoCredito {
     private String numero;
-    private double limiteTotal;
+    private int limiteTotal;
     private double limiteUsado;
 
     public CartaoCredito() {
@@ -15,7 +15,7 @@ public class CartaoCredito {
         int fourthSequence = rand.nextInt(9999);
 
         this.numero = firstSequence + " " + secondSequence + " " + thirdSequence + " " + fourthSequence;
-        this.limiteTotal = rand.nextDouble() * 2000;
+        this.limiteTotal = rand.nextInt(2000);
         this.limiteUsado = 0;
     }
 
@@ -31,7 +31,7 @@ public class CartaoCredito {
         return limiteTotal;
     }
 
-    public void setLimiteTotal(double limiteTotal) {
+    public void setLimiteTotal(int limiteTotal) {
         this.limiteTotal = limiteTotal;
     }
 

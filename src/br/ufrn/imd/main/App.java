@@ -24,7 +24,7 @@ public class App {
 
         Banco banco1 = new Banco(1, "Bradesco");
         Banco banco2 = new Banco(2, "Banco do Brasil");
-        
+
         Agencia agencia1 = new Agencia(1, enderecoAgencia1, banco1);
         Agencia agencia2 = new Agencia(2, enderecoAgencia2, banco2);
 
@@ -34,12 +34,11 @@ public class App {
         ArrayList<Conta> contasCliente = new ArrayList<>();
         contasCliente.add(conta1);
 
-        Cliente cliente = new Cliente("Isaac Lourenço", enderecoCliente, "123.123.132-12", dataNascimento.getTime(), contasCliente);
+        Cliente cliente = new Cliente("Isaac Lourenço", enderecoCliente, "123.123.132-12", dataNascimento.getTime(),
+                contasCliente);
         cliente.addConta(conta2);
         return cliente;
     }
-
-    
 
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
@@ -54,28 +53,39 @@ public class App {
                 contaSelecionada = conta;
             }
         }
-        
-        ContaUI.showMenuConta(contaSelecionada);
-        int opcaoOperacao = sc.nextInt();
 
-        switch(opcaoOperacao) {
-            case 1:
-                contaSelecionada.depositar(ContaUI.solicitarValor());
-                break;
-            case 2:
-                contaSelecionada.sacar(ContaUI.solicitarValor());
-                break;
-            case 3:
-                contaSelecionada.realizarCompra(ContaUI.solicitarValor());
-                break;
-            case 4:
-                contaSelecionada.solicitarAumentoLimite(ContaUI.solicitarValor());
-                break;
-            case 0:
-        }
-        
-        ContaUI.showUltimoLogDaConta(contaSelecionada);
+        int opcaoOperacao = -1;
+        double valorInformado = 0;
+        do {
+
+            ContaUI.showMenuConta(contaSelecionada);
+            opcaoOperacao = sc.nextInt();
+
+            if (opcaoOperacao > 0) {
+                System.out.println("Informe o valor: ");
+                valorInformado = sc.nextDouble();
+            }
+            switch (opcaoOperacao) {
+                case 1:
+                    contaSelecionada.depositar(valorInformado);
+                    break;
+                case 2:
+                    contaSelecionada.sacar(valorInformado);
+                    break;
+                case 3:
+                    contaSelecionada.realizarCompra(valorInformado);
+                    break;
+                case 4:
+                    contaSelecionada.solicitarAumentoLimite(valorInformado);
+                    break;
+                case 0:
+            }
+
+            ContaUI.showUltimoLogDaConta(contaSelecionada);
+        } while (opcaoOperacao != 0);
 
         sc.close();
     }
 }
+
+// Rode!

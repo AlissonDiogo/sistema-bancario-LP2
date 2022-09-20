@@ -24,7 +24,7 @@ public class ContaUI {
         System.out.println();
         System.out.println(contaSelecionada);
         System.out.println("Saldo débito: " + contaSelecionada.getSaldo());
-        System.out.println("Limite atual crédito: " + contaSelecionada.getCartaoDeCredito().getLimiteUsado());
+        System.out.println("Limite usado crédito: " + contaSelecionada.getCartaoDeCredito().getLimiteUsado());
         System.out.println("Limite crédito: " + contaSelecionada.getCartaoDeCredito().getLimiteTotal());
         System.out.println();
 
@@ -36,16 +36,6 @@ public class ContaUI {
         System.out.println("0 - Sair");
 
         System.out.println("Informe a opção: ");
-    }
-    
-    public static double solicitarValor() {
-        Scanner sc = new Scanner(System.in);
-
-        System.out.println("Informe o valor: ");
-        double valorInformado = Double.parseDouble(sc.nextLine());
-        
-        sc.close();
-        return valorInformado;
     }
 
     public static void showUltimoLogDaConta(Conta conta) {

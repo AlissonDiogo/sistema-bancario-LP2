@@ -6,7 +6,7 @@ public class Conta {
     private String numero;
     private Agencia agencia;
     private String tipo;
-    private double saldo; 
+    private double saldo;
     private HistoricoAcoesConta historicoAcoes;
     private CartaoCredito cartaoDeCredito;
 
@@ -81,6 +81,20 @@ public class Conta {
     public void depositar(double valorDeDeposito){
         this.saldo += valorDeDeposito;
         historicoAcoes.addLogAcao(EnumHistoricoStrings.VALOR_DEPOSITADO_SUCESSO, 3, valorDeDeposito);
+    }
+
+    public boolean solicitarAumentoLimite(double valorSolicitado) {
+        boolean sucesso = this.cartaoDeCredito.solicitarAumentoLimite(valorSolicitado);
+        EnumHistoricoStrings enumLog = (sucesso)? EnumHistoricoStrings.AUMENTO_LIMITE_SUCESSO : EnumHistoricoStrings.ERRO_AUMENTO_LIMITE;
+        this.historicoAcoes.addLogAcao(enumLog, 3);
+        return sucesso;
+    }
+
+    public boolean realizarCompra(double valorCompra) {
+        boolean sucesso = this.cartaoDeCredito.realizarCompra(valorCompra);
+        EnumHistoricoStrings enumLog = (sucesso)? EnumHistoricoStrings.COMPRA_SUCESSO : EnumHistoricoStrings.ERRO_COMPRA;
+        this.historicoAcoes.addLogAcao(enumLog, 3);
+        return sucesso;
     }
 
 }

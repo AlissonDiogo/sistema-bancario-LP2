@@ -5,21 +5,21 @@ import java.util.ArrayList;
 public class Conta {
     private String numero;
     private Agencia agencia;
-    private String tipo;
     private double saldo;
     private HistoricoAcoesConta historicoAcoes;
     private CartaoCredito cartaoDeCredito;
 
-    public Conta() {
+    public Conta(String numero, Agencia agencia, double saldo) {
+        this.numero = numero;
+        this.agencia = agencia;
+        this.saldo = saldo;
         this.historicoAcoes = new HistoricoAcoesConta();
         this.cartaoDeCredito = new CartaoCredito();
     }
 
-    public Conta(String numero, double saldo) {
-        this.numero = numero;
-        this.saldo = saldo;
-        this.historicoAcoes = new HistoricoAcoesConta();
-        this.cartaoDeCredito = new CartaoCredito();
+    @Override
+    public String toString() {
+        return this.numero + " " + this.agencia.getBanco().getNomeBanco();
     }
 
     public String getNumero() {
@@ -36,14 +36,6 @@ public class Conta {
 
     public void setAgencia(Agencia agencia) {
         this.agencia = agencia;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
     }
 
     public CartaoCredito getCartaoDeCredito() {

@@ -3,7 +3,7 @@ package br.ufrn.imd.dominio;
 import java.util.ArrayList;
 
 public class HistoricoAcoesConta {
-    private ArrayList<LogHistoricoAcoes> acoes;
+    private ArrayList<LogHistoricoAcoes> acoes = new ArrayList<>();
 
     public void addLogAcao(EnumHistoricoStrings enumError, int codigo_erro) {
         LogHistoricoAcoes newLogAcao = new LogHistoricoAcoes();

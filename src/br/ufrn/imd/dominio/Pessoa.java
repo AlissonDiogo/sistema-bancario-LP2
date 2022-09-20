@@ -8,6 +8,13 @@ public class Pessoa {
     private String cpf;
     private Date dataNascimento;
 
+    public Pessoa(String nome, Endereco endereco, String cpf, Date dataNascimento) {
+        this.nome = nome;
+        this.endereco = endereco;
+        this.cpf = cpf;
+        this.dataNascimento = dataNascimento;
+    }
+
     public String getNome() {
         return nome;
     }

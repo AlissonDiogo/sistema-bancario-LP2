@@ -31,7 +31,7 @@ public class LogHistoricoAcoes {
 
     @Override
     public String toString() {
-        return "Codigo: " + this.codigoLog + " " + this.textoLog;
+        return this.textoLog;
     }
 
 }

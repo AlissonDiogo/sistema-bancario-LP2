@@ -5,6 +5,12 @@ public class Agencia {
     private Endereco endereco;
     private Banco banco;
 
+    public Agencia(int id, Endereco endereco, Banco banco) {
+        this.id = id;
+        this.endereco = endereco;
+        this.banco = banco;
+    }
+
     public int getId() {
         return id;
     }

@@ -12,12 +12,14 @@ public class Conta {
 
     public Conta() {
         this.historicoAcoes = new HistoricoAcoesConta();
+        this.cartaoDeCredito = new CartaoCredito();
     }
 
     public Conta(String numero, double saldo) {
         this.numero = numero;
         this.saldo = saldo;
         this.historicoAcoes = new HistoricoAcoesConta();
+        this.cartaoDeCredito = new CartaoCredito();
     }
 
     public String getNumero() {

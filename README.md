@@ -1,18 +1,13 @@
-## Getting Started
+## Sistema Bancário
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Ideia de Sistema Bancário para trabalhar conceitos de Programação Orientada a Objetos (POO), com foco no desenvolvimento de código com baixo acoplamento e alta coesão.
 
-## Folder Structure
+## Extensões no VSCODE
 
-The workspace contains two folders by default, where:
+- Extension Pack for Java
+- Project Manager for Java
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## Autores
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+| [<img src="https://avatars3.githubusercontent.com/u/31693006?s=460&v=4" width=115><br><sub>@isaacmsl</sub>](https://github.com/isaacmsl) | [<img src="https://avatars.githubusercontent.com/u/38612359?v=4" width=115><br><sub>@AlissonDiogo</sub>](https://github.com/AlissonDiogo) |
+| :--------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------: |

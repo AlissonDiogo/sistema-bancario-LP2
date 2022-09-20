@@ -5,7 +5,6 @@ import java.util.ArrayList;
 public class Banco {
     private int id;
     private String nome;
-    private ArrayList<Agencia> agencias;
 
     public int getIdBanco() {
         return id;
@@ -18,12 +17,6 @@ public class Banco {
     }
     public void setNomeBanco(String nomeBanco) {
         this.nome = nomeBanco;
-    }
-    public ArrayList<Agencia> getAgencias() {
-        return agencias;
-    }
-    public void setAgencias(ArrayList<Agencia> agencias) {
-        this.agencias = agencias;
     }
 
 }

@@ -6,8 +6,7 @@ public class Conta {
     private String numero;
     private Agencia agencia;
     private String tipo;
-    private double saldo;
-    private boolean status;
+    private double saldo; 
     private HistoricoAcoesConta historicoAcoes;
     private CartaoCredito cartaoDeCredito;
 
@@ -65,14 +64,6 @@ public class Conta {
         return historicoAcoes.getAcoes();
     }
 
-    public boolean isCreditoAtivado() {
-        return creditoAtivado;
-    }
-
-    public void setCreditoAtivado(boolean creditoAtivado) {
-        this.creditoAtivado = creditoAtivado;
-    }
-
     public boolean sacar(double valorParaSacar) {
         if (saldo < valorParaSacar) {
             // não tem saldo suficiente
@@ -83,6 +74,11 @@ public class Conta {
         saldo -= valorParaSacar;
         historicoAcoes.addLogAcao(EnumHistoricoStrings.VALOR_SACADO_SUCESSO, 2);
         return true;
+    }
+
+    public void depositar(double valorDeDeposito){
+        this.saldo += valorDeDeposito;
+        historicoAcoes.addLogAcao(EnumHistoricoStrings.VALOR_DEPOSITADO_SUCESSO, 3, valorDeDeposito);
     }
 
 }

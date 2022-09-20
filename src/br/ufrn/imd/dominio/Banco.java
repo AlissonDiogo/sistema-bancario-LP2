@@ -1,7 +1,5 @@
 package br.ufrn.imd.dominio;
 
-import java.util.ArrayList;
-
 public class Banco {
     private int id;
     private String nome;
